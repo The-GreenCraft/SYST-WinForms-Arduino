@@ -56,6 +56,11 @@
             this.button_off.TabIndex = 1;
             this.button_off.Text = "Aus";
             this.button_off.UseVisualStyleBackColor = false;
+            this.button_off.Click += new System.EventHandler(this.button_off_Click);
+            // 
+            // serialPortLED
+            // 
+            this.serialPortLED.PortName = "COM3";
             // 
             // Form1
             // 

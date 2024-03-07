@@ -36,6 +36,11 @@ namespace W_UE_LED_einaus
             Port_Close();
         }
 
+        private void Senden(byte[] bytArrSenden)
+        {
+            serialPortLED.Write(bytArrSenden, 0, 1);
+        }
+
         private void Port_Open()
         {
             serialPortLED.Open();
@@ -43,6 +48,24 @@ namespace W_UE_LED_einaus
         private void Port_Close()
         {
             serialPortLED.Close();
+        }
+
+        private void buttonOff_Click(object sender, EventArgs e)
+        {
+            LED_Off();
+        }
+        private void LED_Off()
+        {
+            byte[] bytArrSenden = new byte[1];
+
+            bytArrSenden[0] = 0;
+
+            Wert_senden(bytArrSenden);
+        }
+
+        private void button_off_Click(object sender, EventArgs e)
+        {
+            LED_Off();
         }
     }
 }
