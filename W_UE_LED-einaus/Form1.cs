@@ -23,12 +23,26 @@ namespace W_UE_LED_einaus
         }
         private void LED_On()
         {
-            Wert_senden(1);
+            byte[] bytArrSenden = new byte[1];
+
+            bytArrSenden[0] = 1;
+            Wert_senden(bytArrSenden);
         }
 
         private void Wert_senden(byte[] bytArrSenden)
         {
+            Port_Open();
+            Senden(bytArrSenden);
+            Port_Close();
+        }
 
+        private void Port_Open()
+        {
+            serialPortLED.Open();
+        }
+        private void Port_Close()
+        {
+            serialPortLED.Close();
         }
     }
 }

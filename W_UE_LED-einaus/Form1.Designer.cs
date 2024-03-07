@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button_on = new System.Windows.Forms.Button();
             this.button_off = new System.Windows.Forms.Button();
+            this.serialPortLED = new System.IO.Ports.SerialPort(this.components);
             this.SuspendLayout();
             // 
             // button_on
@@ -72,6 +74,7 @@
 
         private System.Windows.Forms.Button button_on;
         private System.Windows.Forms.Button button_off;
+        private System.IO.Ports.SerialPort serialPortLED;
     }
 }
 
