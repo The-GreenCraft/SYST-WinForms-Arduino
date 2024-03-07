@@ -16,5 +16,19 @@ namespace W_UE_LED_einaus
         {
             InitializeComponent();
         }
+
+        private void button_on_Click(object sender, EventArgs e)
+        {
+            LED_On();
+        }
+        private void LED_On()
+        {
+            Wert_senden(1);
+        }
+
+        private void Wert_senden(byte[] bytArrSenden)
+        {
+
+        }
     }
 }
